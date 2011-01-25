@@ -381,7 +381,7 @@ static void _cfsocketCallback( CFSocketRef inCFSocketRef, CFSocketCallBackType i
 		return NO;
 
 	// Get host information
-	socketHost = gethostbyname( [inHostname cString] );
+	socketHost = gethostbyname( [inHostname cStringUsingEncoding: NSASCIIStringEncoding] );
 	if( !socketHost )
 		return NO;
 	
@@ -773,7 +773,7 @@ static void _cfsocketCallback( CFSocketRef inCFSocketRef, CFSocketCallBackType i
 
 +(NSString*)	stringWithSocketAddress: (struct in_addr*)inAddress
 {
-	return [NSString stringWithCString:inet_ntoa( *inAddress )];
+	return [NSString stringWithCString: inet_ntoa( *inAddress ) encoding: NSASCIIStringEncoding];
 }
 
 #pragma mark -
