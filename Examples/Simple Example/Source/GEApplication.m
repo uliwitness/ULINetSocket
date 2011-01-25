@@ -66,7 +66,7 @@
 	data = [mSocket readString:NSUTF8StringEncoding];
 	
 	// Write downloaded page to disk
-	[data writeToFile:path atomically:YES];
+	[data writeToFile: path atomically: YES encoding: NSUTF8StringEncoding error: nil];
 	
 	NSLog( @"GET Example: Saved downloaded page to %@", path );
 }
