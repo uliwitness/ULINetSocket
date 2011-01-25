@@ -5,11 +5,11 @@
 #import "GSClient.h"
 #import "GSApplication.h"
 #import "GCProtocol.h"
-#import "NetSocket.h"
+#import "ULINetSocket.h"
 
 @implementation GSClient
 
-- (id)initWithNetSocket:(NetSocket*)inNetSocket
+- (id)initWithNetSocket:(ULINetSocket*)inNetSocket
 {
 	if( ![super init] )
 		return nil;
@@ -35,7 +35,7 @@
 
 #pragma mark -
 
-- (NetSocket*)netSocket
+- (ULINetSocket*)netSocket
 {
 	return mSocket;
 }
@@ -98,7 +98,7 @@
 
 #pragma mark -
 
-- (void)netsocketDisconnected:(NetSocket*)inNetSocket
+- (void)netsocketDisconnected:(ULINetSocket*)inNetSocket
 {
 	NetPacket*	packet;
 	
@@ -117,7 +117,7 @@
 	[[GSApplication sharedApplication] removeClient:self];
 }
 
-- (void)netsocket:(NetSocket*)inNetSocket dataAvailable:(unsigned)inAmount
+- (void)netsocket:(ULINetSocket*)inNetSocket dataAvailable:(unsigned)inAmount
 {
 	NetPacket*		packet;
 	NSData*			packetData;
@@ -136,7 +136,7 @@
 	}
 }
 
-- (void)netsocketDataSent:(NetSocket*)inNetSocket
+- (void)netsocketDataSent:(ULINetSocket*)inNetSocket
 {
 	
 }

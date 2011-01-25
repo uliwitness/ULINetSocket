@@ -3,7 +3,7 @@
 //  GET Example
 
 #import "GEApplication.h"
-#import "NetSocket.h"
+#import "ULINetSocket.h"
 
 @implementation GEApplication
 
@@ -29,20 +29,20 @@
 
 - (void)connect
 {
-	// Create a new NetSocket connected to the host. Since NetSocket is asynchronous, the socket is not 
+	// Create a new ULINetSocket connected to the host. Since ULINetSocket is asynchronous, the socket is not 
 	// connected to the host until the delegate method is called.
-	mSocket = [[NetSocket netsocketConnectedToHost:@"www.apple.com" port:80] retain];
+	mSocket = [[ULINetSocket netsocketConnectedToHost:@"www.apple.com" port:80] retain];
 	
-	// Schedule the NetSocket on the current runloop
+	// Schedule the ULINetSocket on the current runloop
 	[mSocket scheduleOnCurrentRunLoop];
 	
-	// Set the NetSocket's delegate to ourself
+	// Set the ULINetSocket's delegate to ourself
 	[mSocket setDelegate:self];
 }
 
 #pragma mark -
 
-- (void)netsocketConnected:(NetSocket*)inNetSocket
+- (void)netsocketConnected:(ULINetSocket*)inNetSocket
 {
 	NSLog( @"GET Example: Connected" );
 	NSLog( @"GET Example: Sending HTTP header..." );
@@ -51,7 +51,7 @@
 	[mSocket writeString:@"GET / HTTP/1.0\r\n\r\n" encoding:NSUTF8StringEncoding];
 }
 
-- (void)netsocketDisconnected:(NetSocket*)inNetSocket
+- (void)netsocketDisconnected:(ULINetSocket*)inNetSocket
 {
 	NSString*	path;
 	NSString*	data;
@@ -61,7 +61,7 @@
 	// Determine path for writing page to disk
 	path = [@"~/Desktop/GET Example Download.html" stringByExpandingTildeInPath];
 	
-	// Read downloaded page from socket. Since NetSocket buffers available data for you
+	// Read downloaded page from socket. Since ULINetSocket buffers available data for you
 	// you can wait for your socket to disconnect and then read the data at once
 	data = [mSocket readString:NSUTF8StringEncoding];
 	
@@ -71,12 +71,12 @@
 	NSLog( @"GET Example: Saved downloaded page to %@", path );
 }
 
-- (void)netsocket:(NetSocket*)inNetSocket dataAvailable:(unsigned)inAmount
+- (void)netsocket:(ULINetSocket*)inNetSocket dataAvailable:(unsigned)inAmount
 {
 	NSLog( @"GET Example: Data available (%u)", inAmount );
 }
 
-- (void)netsocketDataSent:(NetSocket*)inNetSocket
+- (void)netsocketDataSent:(ULINetSocket*)inNetSocket
 {
 	NSLog( @"GET Example: Data sent" );
 }

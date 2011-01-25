@@ -3,7 +3,7 @@
 //  main.m
 
 #import "GSApplication.h"
-#import "NetSocket.h"
+#import "ULINetSocket.h"
 
 int
 main( int inArgC, const char* inArgV[] )
@@ -11,8 +11,8 @@ main( int inArgC, const char* inArgV[] )
 	NSAutoreleasePool*	pool = [[NSAutoreleasePool alloc] init];
 	GSApplication*			application = nil;
 	
-	// Use the NetSocket convenience method to ignore broken pipe signals
-	[NetSocket ignoreBrokenPipes];
+	// Use the ULINetSocket convenience method to ignore broken pipe signals
+	[ULINetSocket ignoreBrokenPipes];
 	
 	NS_DURING
 	{

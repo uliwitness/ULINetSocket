@@ -1,0 +1,351 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		55E1608F12EF669000DB754C /* GSPrefix.h in Headers */ = {isa = PBXBuildFile; fileRef = 32A70AAB03705E1F00C91783 /* GSPrefix.h */; };
+		55E1609112EF669000DB754C /* GSApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = DA6754110497A666006388E0 /* GSApplication.h */; };
+		55E1609212EF669000DB754C /* GSClient.h in Headers */ = {isa = PBXBuildFile; fileRef = DA67542A0497D2B7006388E0 /* GSClient.h */; };
+		55E1609312EF669000DB754C /* GCProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = DA6754460497E133006388E0 /* GCProtocol.h */; };
+		55E1609412EF669000DB754C /* NSData-Compression.h in Headers */ = {isa = PBXBuildFile; fileRef = DA6754480497E133006388E0 /* NSData-Compression.h */; };
+		55E1609512EF669000DB754C /* NetPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = DA67544B0497E133006388E0 /* NetPacket.h */; };
+		55E1609712EF669000DB754C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6754000497A582006388E0 /* main.m */; };
+		55E1609912EF669000DB754C /* GSApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6754120497A666006388E0 /* GSApplication.m */; };
+		55E1609A12EF669000DB754C /* GSClient.m in Sources */ = {isa = PBXBuildFile; fileRef = DA67542B0497D2B7006388E0 /* GSClient.m */; };
+		55E1609B12EF669000DB754C /* NSData-Compression.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6754470497E133006388E0 /* NSData-Compression.m */; };
+		55E1609C12EF669000DB754C /* NetPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6754490497E133006388E0 /* NetPacket.m */; };
+		55E1609D12EF669000DB754C /* GCProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = DA67544A0497E133006388E0 /* GCProtocol.m */; };
+		55E1609F12EF669000DB754C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FB779EFE84155DC02AAC07 /* Foundation.framework */; };
+		55E160A012EF669000DB754C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6754350497DB93006388E0 /* libz.dylib */; };
+		55E160B212EF66D100DB754C /* ULINetSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 55E160B012EF66D100DB754C /* ULINetSocket.h */; };
+		55E160B312EF66D100DB754C /* ULINetSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E160B112EF66D100DB754C /* ULINetSocket.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		55E160A212EF669000DB754C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		08FB779EFE84155DC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		32A70AAB03705E1F00C91783 /* GSPrefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSPrefix.h; sourceTree = "<group>"; };
+		55E160A712EF669000DB754C /* GhettoChat Server */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "GhettoChat Server"; sourceTree = BUILT_PRODUCTS_DIR; };
+		55E160B012EF66D100DB754C /* ULINetSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ULINetSocket.h; path = ../../../Classes/ULINetSocket.h; sourceTree = SOURCE_ROOT; };
+		55E160B112EF66D100DB754C /* ULINetSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ULINetSocket.m; path = ../../../Classes/ULINetSocket.m; sourceTree = SOURCE_ROOT; };
+		DA6754000497A582006388E0 /* main.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Source/main.m; sourceTree = "<group>"; };
+		DA6754110497A666006388E0 /* GSApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSApplication.h; path = Source/GSApplication.h; sourceTree = "<group>"; };
+		DA6754120497A666006388E0 /* GSApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSApplication.m; path = Source/GSApplication.m; sourceTree = "<group>"; };
+		DA67542A0497D2B7006388E0 /* GSClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSClient.h; path = Source/GSClient.h; sourceTree = "<group>"; };
+		DA67542B0497D2B7006388E0 /* GSClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSClient.m; path = Source/GSClient.m; sourceTree = "<group>"; };
+		DA6754350497DB93006388E0 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = /usr/lib/libz.1.1.3.dylib; sourceTree = "<absolute>"; };
+		DA6754460497E133006388E0 /* GCProtocol.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = GCProtocol.h; path = "../GhettoChat Shared/GCProtocol.h"; sourceTree = "<group>"; };
+		DA6754470497E133006388E0 /* NSData-Compression.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = "NSData-Compression.m"; path = "../GhettoChat Shared/NSData-Compression.m"; sourceTree = "<group>"; };
+		DA6754480497E133006388E0 /* NSData-Compression.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = "NSData-Compression.h"; path = "../GhettoChat Shared/NSData-Compression.h"; sourceTree = "<group>"; };
+		DA6754490497E133006388E0 /* NetPacket.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = NetPacket.m; path = "../GhettoChat Shared/NetPacket.m"; sourceTree = "<group>"; };
+		DA67544A0497E133006388E0 /* GCProtocol.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = GCProtocol.m; path = "../GhettoChat Shared/GCProtocol.m"; sourceTree = "<group>"; };
+		DA67544B0497E133006388E0 /* NetPacket.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = NetPacket.h; path = "../GhettoChat Shared/NetPacket.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		55E1609E12EF669000DB754C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55E1609F12EF669000DB754C /* Foundation.framework in Frameworks */,
+				55E160A012EF669000DB754C /* libz.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08FB7794FE84155DC02AAC07 /* GhettoChat Server */ = {
+			isa = PBXGroup;
+			children = (
+				32A70AAB03705E1F00C91783 /* GSPrefix.h */,
+				08FB7795FE84155DC02AAC07 /* Source */,
+				08FB779DFE84155DC02AAC07 /* Frameworks */,
+				1AB674ADFE9D54B511CA2CBB /* Products */,
+			);
+			name = "GhettoChat Server";
+			sourceTree = "<group>";
+		};
+		08FB7795FE84155DC02AAC07 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				DA6754000497A582006388E0 /* main.m */,
+				DA6754120497A666006388E0 /* GSApplication.m */,
+				DA6754110497A666006388E0 /* GSApplication.h */,
+				DA67542B0497D2B7006388E0 /* GSClient.m */,
+				DA67542A0497D2B7006388E0 /* GSClient.h */,
+				DA6754450497E128006388E0 /* Protocol */,
+				DA6754020497A58D006388E0 /* NetSocket */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		08FB779DFE84155DC02AAC07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				08FB779EFE84155DC02AAC07 /* Foundation.framework */,
+				DA6754350497DB93006388E0 /* libz.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1AB674ADFE9D54B511CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				55E160A712EF669000DB754C /* GhettoChat Server */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DA6754020497A58D006388E0 /* NetSocket */ = {
+			isa = PBXGroup;
+			children = (
+				55E160B012EF66D100DB754C /* ULINetSocket.h */,
+				55E160B112EF66D100DB754C /* ULINetSocket.m */,
+			);
+			name = NetSocket;
+			sourceTree = "<group>";
+		};
+		DA6754450497E128006388E0 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				DA67544A0497E133006388E0 /* GCProtocol.m */,
+				DA6754460497E133006388E0 /* GCProtocol.h */,
+				DA6754490497E133006388E0 /* NetPacket.m */,
+				DA67544B0497E133006388E0 /* NetPacket.h */,
+				DA6754470497E133006388E0 /* NSData-Compression.m */,
+				DA6754480497E133006388E0 /* NSData-Compression.h */,
+			);
+			name = Protocol;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		55E1608E12EF669000DB754C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55E1608F12EF669000DB754C /* GSPrefix.h in Headers */,
+				55E1609112EF669000DB754C /* GSApplication.h in Headers */,
+				55E1609212EF669000DB754C /* GSClient.h in Headers */,
+				55E1609312EF669000DB754C /* GCProtocol.h in Headers */,
+				55E1609412EF669000DB754C /* NSData-Compression.h in Headers */,
+				55E1609512EF669000DB754C /* NetPacket.h in Headers */,
+				55E160B212EF66D100DB754C /* ULINetSocket.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		55E1608D12EF669000DB754C /* GhettoChat Server */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55E160A312EF669000DB754C /* Build configuration list for PBXNativeTarget "GhettoChat Server" */;
+			buildPhases = (
+				55E1608E12EF669000DB754C /* Headers */,
+				55E1609612EF669000DB754C /* Sources */,
+				55E1609E12EF669000DB754C /* Frameworks */,
+				55E160A112EF669000DB754C /* Rez */,
+				55E160A212EF669000DB754C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GhettoChat Server";
+			productInstallPath = "$(HOME)/bin";
+			productName = "GhettoChat Server";
+			productReference = 55E160A712EF669000DB754C /* GhettoChat Server */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 55E1602312EF651400DB754C /* Build configuration list for PBXProject "GhettoChat Server" */;
+			compatibilityVersion = "Xcode 2.4";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 08FB7794FE84155DC02AAC07 /* GhettoChat Server */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				55E1608D12EF669000DB754C /* GhettoChat Server */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXRezBuildPhase section */
+		55E160A112EF669000DB754C /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXRezBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		55E1609612EF669000DB754C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55E1609712EF669000DB754C /* main.m in Sources */,
+				55E1609912EF669000DB754C /* GSApplication.m in Sources */,
+				55E1609A12EF669000DB754C /* GSClient.m in Sources */,
+				55E1609B12EF669000DB754C /* NSData-Compression.m in Sources */,
+				55E1609C12EF669000DB754C /* NetPacket.m in Sources */,
+				55E1609D12EF669000DB754C /* GCProtocol.m in Sources */,
+				55E160B312EF66D100DB754C /* ULINetSocket.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		55E1601D12EF651400DB754C /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Development;
+		};
+		55E1601E12EF651400DB754C /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Deployment;
+		};
+		55E1601F12EF651400DB754C /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Default;
+		};
+		55E160A412EF669000DB754C /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = GSPrefix.h;
+				HEADER_SEARCH_PATHS = "";
+				INSTALL_PATH = "$(HOME)/bin";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "GhettoChat Server";
+				REZ_EXECUTABLE = YES;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		55E160A512EF669000DB754C /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = GSPrefix.h;
+				HEADER_SEARCH_PATHS = "";
+				INSTALL_PATH = "$(HOME)/bin";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "GhettoChat Server";
+				REZ_EXECUTABLE = YES;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		55E160A612EF669000DB754C /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = GSPrefix.h;
+				HEADER_SEARCH_PATHS = "";
+				INSTALL_PATH = "$(HOME)/bin";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "GhettoChat Server";
+				REZ_EXECUTABLE = YES;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Default;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		55E1602312EF651400DB754C /* Build configuration list for PBXProject "GhettoChat Server" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55E1601D12EF651400DB754C /* Development */,
+				55E1601E12EF651400DB754C /* Deployment */,
+				55E1601F12EF651400DB754C /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		55E160A312EF669000DB754C /* Build configuration list for PBXNativeTarget "GhettoChat Server" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55E160A412EF669000DB754C /* Development */,
+				55E160A512EF669000DB754C /* Deployment */,
+				55E160A612EF669000DB754C /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}

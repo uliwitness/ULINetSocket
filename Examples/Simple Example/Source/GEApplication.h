@@ -2,11 +2,11 @@
 //  GEApplication.h
 //  GET Example
 
-@class NetSocket;
+@class ULINetSocket;
 
 @interface GEApplication : NSObject 
 {
-	NetSocket*	mSocket;
+	ULINetSocket	*	mSocket;
 }
 
 - (void)connect;

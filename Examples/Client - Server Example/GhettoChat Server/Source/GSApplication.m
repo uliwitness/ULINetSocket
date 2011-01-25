@@ -5,7 +5,7 @@
 #import "GSApplication.h"
 #import "GSClient.h"
 #import "GCProtocol.h"
-#import "NetSocket.h"
+#import "ULINetSocket.h"
 
 static GSApplication* sApplication = nil;
 
@@ -45,7 +45,7 @@ static GSApplication* sApplication = nil;
 
 - (void)serve
 {
-	mServerSocket = [[NetSocket netsocketListeningOnPort:kGSPort] retain];
+	mServerSocket = [[ULINetSocket netsocketListeningOnPort:kGSPort] retain];
 	[mServerSocket scheduleOnCurrentRunLoop];
 	[mServerSocket setDelegate:self];
 	
@@ -91,7 +91,7 @@ static GSApplication* sApplication = nil;
 
 #pragma mark -
 
-- (void)netsocket:(NetSocket*)inNetSocket connectionAccepted:(NetSocket*)inNewNetSocket
+- (void)netsocket:(ULINetSocket*)inNetSocket connectionAccepted:(ULINetSocket*)inNewNetSocket
 {
 	GSClient* client;
 	

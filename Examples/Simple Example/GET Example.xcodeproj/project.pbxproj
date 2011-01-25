@@ -1,0 +1,307 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		55E160C912EF674900DB754C /* GEPrefix.h in Headers */ = {isa = PBXBuildFile; fileRef = 32A70AAB03705E1F00C91783 /* GEPrefix.h */; };
+		55E160CB12EF674900DB754C /* GEApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = DA675581049826BF006388E0 /* GEApplication.h */; };
+		55E160CE12EF674900DB754C /* GEApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = DA675582049826BF006388E0 /* GEApplication.m */; };
+		55E160CF12EF674900DB754C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6755B904982DE3006388E0 /* main.m */; };
+		55E160D112EF674900DB754C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FB779EFE84155DC02AAC07 /* Foundation.framework */; };
+		55E160DC12EF676900DB754C /* ULINetSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 55E160DA12EF676900DB754C /* ULINetSocket.h */; };
+		55E160DD12EF676900DB754C /* ULINetSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E160DB12EF676900DB754C /* ULINetSocket.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		55E160D312EF674900DB754C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		08FB779EFE84155DC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		32A70AAB03705E1F00C91783 /* GEPrefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GEPrefix.h; sourceTree = "<group>"; };
+		55E160D812EF674900DB754C /* GET Example */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "GET Example"; sourceTree = BUILT_PRODUCTS_DIR; };
+		55E160DA12EF676900DB754C /* ULINetSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ULINetSocket.h; path = ../../Classes/ULINetSocket.h; sourceTree = SOURCE_ROOT; };
+		55E160DB12EF676900DB754C /* ULINetSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ULINetSocket.m; path = ../../Classes/ULINetSocket.m; sourceTree = SOURCE_ROOT; };
+		DA675581049826BF006388E0 /* GEApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GEApplication.h; path = Source/GEApplication.h; sourceTree = "<group>"; };
+		DA675582049826BF006388E0 /* GEApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GEApplication.m; path = Source/GEApplication.m; sourceTree = "<group>"; };
+		DA6755B904982DE3006388E0 /* main.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Source/main.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		55E160D012EF674900DB754C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55E160D112EF674900DB754C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08FB7794FE84155DC02AAC07 /* GET Example */ = {
+			isa = PBXGroup;
+			children = (
+				32A70AAB03705E1F00C91783 /* GEPrefix.h */,
+				08FB7795FE84155DC02AAC07 /* Source */,
+				08FB779DFE84155DC02AAC07 /* Frameworks */,
+				1AB674ADFE9D54B511CA2CBB /* Products */,
+			);
+			name = "GET Example";
+			sourceTree = "<group>";
+		};
+		08FB7795FE84155DC02AAC07 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				DA6755B904982DE3006388E0 /* main.m */,
+				DA675582049826BF006388E0 /* GEApplication.m */,
+				DA675581049826BF006388E0 /* GEApplication.h */,
+				DA6755800498269D006388E0 /* NetSocket */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		08FB779DFE84155DC02AAC07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				08FB779EFE84155DC02AAC07 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1AB674ADFE9D54B511CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				55E160D812EF674900DB754C /* GET Example */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DA6755800498269D006388E0 /* NetSocket */ = {
+			isa = PBXGroup;
+			children = (
+				55E160DA12EF676900DB754C /* ULINetSocket.h */,
+				55E160DB12EF676900DB754C /* ULINetSocket.m */,
+			);
+			name = NetSocket;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		55E160C812EF674900DB754C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55E160C912EF674900DB754C /* GEPrefix.h in Headers */,
+				55E160CB12EF674900DB754C /* GEApplication.h in Headers */,
+				55E160DC12EF676900DB754C /* ULINetSocket.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		55E160C712EF674900DB754C /* GET Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55E160D412EF674900DB754C /* Build configuration list for PBXNativeTarget "GET Example" */;
+			buildPhases = (
+				55E160C812EF674900DB754C /* Headers */,
+				55E160CC12EF674900DB754C /* Sources */,
+				55E160D012EF674900DB754C /* Frameworks */,
+				55E160D212EF674900DB754C /* Rez */,
+				55E160D312EF674900DB754C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GET Example";
+			productInstallPath = "$(HOME)/bin";
+			productName = "GET Example";
+			productReference = 55E160D812EF674900DB754C /* GET Example */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 55E1603812EF652C00DB754C /* Build configuration list for PBXProject "GET Example" */;
+			compatibilityVersion = "Xcode 2.4";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 08FB7794FE84155DC02AAC07 /* GET Example */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				55E160C712EF674900DB754C /* GET Example */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXRezBuildPhase section */
+		55E160D212EF674900DB754C /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXRezBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		55E160CC12EF674900DB754C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55E160CE12EF674900DB754C /* GEApplication.m in Sources */,
+				55E160CF12EF674900DB754C /* main.m in Sources */,
+				55E160DD12EF676900DB754C /* ULINetSocket.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		55E1603212EF652C00DB754C /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Development;
+		};
+		55E1603312EF652C00DB754C /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Deployment;
+		};
+		55E1603412EF652C00DB754C /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Default;
+		};
+		55E160D512EF674900DB754C /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = GEPrefix.h;
+				HEADER_SEARCH_PATHS = "";
+				INSTALL_PATH = "$(HOME)/bin";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "GET Example";
+				REZ_EXECUTABLE = YES;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		55E160D612EF674900DB754C /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = GEPrefix.h;
+				HEADER_SEARCH_PATHS = "";
+				INSTALL_PATH = "$(HOME)/bin";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "GET Example";
+				REZ_EXECUTABLE = YES;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		55E160D712EF674900DB754C /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = GEPrefix.h;
+				HEADER_SEARCH_PATHS = "";
+				INSTALL_PATH = "$(HOME)/bin";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "GET Example";
+				REZ_EXECUTABLE = YES;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Default;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		55E1603812EF652C00DB754C /* Build configuration list for PBXProject "GET Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55E1603212EF652C00DB754C /* Development */,
+				55E1603312EF652C00DB754C /* Deployment */,
+				55E1603412EF652C00DB754C /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		55E160D412EF674900DB754C /* Build configuration list for PBXNativeTarget "GET Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55E160D512EF674900DB754C /* Development */,
+				55E160D612EF674900DB754C /* Deployment */,
+				55E160D712EF674900DB754C /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}

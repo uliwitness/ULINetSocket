@@ -4,7 +4,7 @@
 
 #import "GCApplication.h"
 #import "GCChat.h"
-#import "NetSocket.h"
+#import "ULINetSocket.h"
 
 @implementation GCApplication
 
@@ -50,7 +50,7 @@
 int
 main( int inArgC, const char* inArgV[] )
 {
-	[NetSocket ignoreBrokenPipes];
+	[ULINetSocket ignoreBrokenPipes];
 	
 	return NSApplicationMain( inArgC, inArgV );
 }

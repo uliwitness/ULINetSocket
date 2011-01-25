@@ -2,19 +2,19 @@
 //  GhettoChat
 //  GCChat.h
 
-@class NetSocket;
+@class ULINetSocket;
 @class NetPacket;
 
 @interface GCChat : NSObject 
 {
-	IBOutlet NSWindow*		mWindow;
-	IBOutlet NSPanel*			mConnectPanel;
-	IBOutlet NSTextView*		mChatTextView;
-	IBOutlet NSTextView*		mInputTextView;
-	IBOutlet NSTextField*	mAddressField;
-	IBOutlet NSTextField*	mNicknameField;
-				NetSocket*		mSocket;
-				NSString*		mNickname;
+	IBOutlet NSWindow		*	mWindow;
+	IBOutlet NSPanel		*	mConnectPanel;
+	IBOutlet NSTextView		*	mChatTextView;
+	IBOutlet NSTextView		*	mInputTextView;
+	IBOutlet NSTextField	*	mAddressField;
+	IBOutlet NSTextField	*	mNicknameField;
+	ULINetSocket			*	mSocket;
+	NSString				*	mNickname;
 }
 
 - (IBAction)disconnect:(id)inSender;

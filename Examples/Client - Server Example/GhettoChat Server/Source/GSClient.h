@@ -2,18 +2,18 @@
 //  GhettoChat Server
 //  GSClient.h
 
-@class NetSocket;
+@class ULINetSocket;
 @class NetPacket;
 
 @interface GSClient : NSObject 
 {
-	NetSocket*	mSocket;
-	NSString*	mNickname;
+	ULINetSocket	*	mSocket;
+	NSString		*	mNickname;
 }
 
-- (id)initWithNetSocket:(NetSocket*)inNetSocket;
+- (id)initWithNetSocket:(ULINetSocket*)inNetSocket;
 
-- (NetSocket*)netSocket;
+- (ULINetSocket*)netSocket;
 
 - (void)processPacket:(NetPacket*)inPacket;
 - (void)processLoginPacket:(NetPacket*)inPacket;

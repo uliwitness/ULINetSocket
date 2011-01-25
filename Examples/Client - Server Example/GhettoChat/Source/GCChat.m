@@ -4,7 +4,7 @@
 
 #import "GCChat.h"
 #import "GCProtocol.h"
-#import "NetSocket.h"
+#import "ULINetSocket.h"
 
 @implementation GCChat
 
@@ -135,7 +135,7 @@
 	[self disconnect:nil];
 	
 	// Create new NetSocket connected to the specified host and port
-	mSocket = [[NetSocket netsocketConnectedToHost:host port:port] retain];
+	mSocket = [[ULINetSocket netsocketConnectedToHost:host port:port] retain];
 	[mSocket scheduleOnCurrentRunLoop];
 	[mSocket setDelegate:self];
 }
@@ -279,24 +279,24 @@
 
 #pragma mark -
 
-- (void)netsocketConnected:(NetSocket*)inNetSocket
+- (void)netsocketConnected:(ULINetSocket*)inNetSocket
 {
 	NSLog( @"GhettoChat: Connected" );
 	
 	[self loginWithNickname:mNickname];
 }
 
-- (void)netsocket:(NetSocket*)inNetSocket connectionTimedOut:(NSTimeInterval)inTimeout
+- (void)netsocket:(ULINetSocket*)inNetSocket connectionTimedOut:(NSTimeInterval)inTimeout
 {
 	NSLog( @"GhettoChat: Connection timed out" );
 }
 
-- (void)netsocketDisconnected:(NetSocket*)inNetSocket
+- (void)netsocketDisconnected:(ULINetSocket*)inNetSocket
 {
 	NSLog( @"GhettoChat: Disconnected" );
 }
 
-- (void)netsocket:(NetSocket*)inNetSocket dataAvailable:(unsigned)inAmount
+- (void)netsocket:(ULINetSocket*)inNetSocket dataAvailable:(unsigned)inAmount
 {
 	NetPacket*		packet;
 	NSData*			packetData;
@@ -315,7 +315,7 @@
 	}
 }
 
-- (void)netsocketDataSent:(NetSocket*)inNetSocket
+- (void)netsocketDataSent:(ULINetSocket*)inNetSocket
 {
 	
 }
@@ -338,7 +338,7 @@
 	return NO;
 }
 
-- (BOOL)validateMenuItem:(id<NSMenuItem>)inMenuItem
+-(BOOL)	validateMenuItem: (NSMenuItem*)inMenuItem
 {
 	BOOL enable = YES;
 	

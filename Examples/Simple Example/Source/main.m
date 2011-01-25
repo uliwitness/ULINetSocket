@@ -1,6 +1,6 @@
 
 #import "GEApplication.h"
-#import "NetSocket.h"
+#import "ULINetSocket.h"
 
 int
 main( int inArgC, const char* inArgV[] )
@@ -9,7 +9,7 @@ main( int inArgC, const char* inArgV[] )
 	GEApplication*			application = nil;
 	
 	// Use the NetSocket convenience method to ignore broken pipe signals
-	[NetSocket ignoreBrokenPipes];
+	[ULINetSocket ignoreBrokenPipes];
 	
 	NS_DURING
 	{
