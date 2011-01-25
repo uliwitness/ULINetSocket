@@ -2,7 +2,7 @@
 //  ULINetSocket.m
 //  Version 0.9
 //
-//  Copyright (c) Dustin Mierau.
+//  Copyright (c) 2001 Dustin Mierau.
 //	With modifications by Uli Kusterer.
 //
 //	This software is provided 'as-is', without any express or implied
