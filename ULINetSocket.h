@@ -106,11 +106,12 @@
 
 #pragma mark -
 
-@interface NSObject (NetSocketDelegate)
-- (void)netsocketConnected:(NetSocket*)inNetSocket;
-- (void)netsocket:(NetSocket*)inNetSocket connectionTimedOut:(NSTimeInterval)inTimeout;
-- (void)netsocketDisconnected:(NetSocket*)inNetSocket;
-- (void)netsocket:(NetSocket*)inNetSocket connectionAccepted:(NetSocket*)inNewNetSocket;
-- (void)netsocket:(NetSocket*)inNetSocket dataAvailable:(unsigned)inAmount;
-- (void)netsocketDataSent:(NetSocket*)inNetSocket;
+@protocol ULINetSocketDelegate
+@optional
+-(void) netsocketConnected: (ULINetSocket*)inNetSocket;
+-(void)	netsocket: (ULINetSocket*)inNetSocket connectionTimedOut: (NSTimeInterval)inTimeout;
+-(void)	netsocketDisconnected: (ULINetSocket*)inNetSocket;
+-(void)	netsocket: (ULINetSocket*)inNetSocket connectionAccepted: (ULINetSocket*)inNewNetSocket;
+-(void)	netsocket: (ULINetSocket*)inNetSocket dataAvailable: (unsigned)inAmount;
+-(void)	netsocketDataSent: (ULINetSocket*)inNetSocket;
 @end
