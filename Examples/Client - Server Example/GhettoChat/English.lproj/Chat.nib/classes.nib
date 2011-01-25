@@ -1,0 +1,20 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {connect = id; connectCancel = id; connectConnect = id; disconnect = id; }; 
+            CLASS = GCChat; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                mAddressField = NSTextField; 
+                mChatTextView = NSTextView; 
+                mConnectPanel = NSPanel; 
+                mInputTextView = NSTextView; 
+                mNicknameField = NSTextField; 
+                mWindow = NSWindow; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

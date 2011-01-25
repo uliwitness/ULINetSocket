@@ -1,0 +1,17 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {connect = id; disconnect = id; }; 
+            CLASS = FirstResponder; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {connect = id; disconnect = id; newChat = id; }; 
+            CLASS = GCApplication; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

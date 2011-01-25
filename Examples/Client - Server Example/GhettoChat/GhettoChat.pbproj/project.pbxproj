@@ -1,0 +1,551 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 38;
+	objects = {
+		080E96DDFE201D6D7F000001 = {
+			children = (
+				DA6753DC04979F7C006388E0,
+				DA6753DB04979F7C006388E0,
+				DA6754210497BE12006388E0,
+				DA6754200497BE12006388E0,
+				DA6754370497DC10006388E0,
+				DA6754160497AAA4006388E0,
+			);
+			isa = PBXGroup;
+			name = Source;
+			refType = 4;
+		};
+		089C165CFE840E0CC02AAC07 = {
+			children = (
+				089C165DFE840E0CC02AAC07,
+			);
+			isa = PBXVariantGroup;
+			name = InfoPlist.strings;
+			refType = 4;
+		};
+		089C165DFE840E0CC02AAC07 = {
+			fileEncoding = 10;
+			isa = PBXFileReference;
+			name = English;
+			path = English.lproj/InfoPlist.strings;
+			refType = 4;
+		};
+		089C165EFE840E0CC02AAC07 = {
+			fileRef = 089C165CFE840E0CC02AAC07;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+//080
+//081
+//082
+//083
+//084
+//100
+//101
+//102
+//103
+//104
+		1058C7A1FEA54F0111CA2CBB = {
+			isa = PBXFrameworkReference;
+			name = Cocoa.framework;
+			path = /System/Library/Frameworks/Cocoa.framework;
+			refType = 0;
+		};
+		1058C7A3FEA54F0111CA2CBB = {
+			fileRef = 1058C7A1FEA54F0111CA2CBB;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+//100
+//101
+//102
+//103
+//104
+//170
+//171
+//172
+//173
+//174
+		17587328FF379C6511CA2CBB = {
+			isa = PBXApplicationReference;
+			path = GhettoChat.app;
+			refType = 3;
+		};
+//170
+//171
+//172
+//173
+//174
+//190
+//191
+//192
+//193
+//194
+		19C28FACFE9D520D11CA2CBB = {
+			children = (
+				17587328FF379C6511CA2CBB,
+			);
+			isa = PBXGroup;
+			name = Products;
+			refType = 4;
+		};
+//190
+//191
+//192
+//193
+//194
+//290
+//291
+//292
+//293
+//294
+		29B97313FDCFA39411CA2CEA = {
+			buildStyles = (
+				4A9504CCFFE6A4B311CA0CBA,
+				4A9504CDFFE6A4B311CA0CBA,
+			);
+			hasScannedForEncodings = 1;
+			isa = PBXProject;
+			mainGroup = 29B97314FDCFA39411CA2CEA;
+			projectDirPath = "";
+			targets = (
+				29B97326FDCFA39411CA2CEA,
+			);
+		};
+		29B97314FDCFA39411CA2CEA = {
+			children = (
+				32CA4F630368D1EE00C91783,
+				080E96DDFE201D6D7F000001,
+				29B97317FDCFA39411CA2CEA,
+				29B97323FDCFA39411CA2CEA,
+				19C28FACFE9D520D11CA2CBB,
+			);
+			isa = PBXGroup;
+			name = GhettoChat;
+			path = "";
+			refType = 4;
+		};
+		29B97317FDCFA39411CA2CEA = {
+			children = (
+				089C165CFE840E0CC02AAC07,
+				DA6753E70497A1A4006388E0,
+				DA675457049809B4006388E0,
+			);
+			isa = PBXGroup;
+			name = Resources;
+			path = "";
+			refType = 4;
+		};
+		29B97323FDCFA39411CA2CEA = {
+			children = (
+				1058C7A1FEA54F0111CA2CBB,
+				DA6754330497DB1B006388E0,
+			);
+			isa = PBXGroup;
+			name = Frameworks;
+			path = "";
+			refType = 4;
+		};
+		29B97326FDCFA39411CA2CEA = {
+			buildPhases = (
+				29B97327FDCFA39411CA2CEA,
+				29B97328FDCFA39411CA2CEA,
+				29B9732BFDCFA39411CA2CEA,
+				29B9732DFDCFA39411CA2CEA,
+			);
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "";
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRECOMPILE_PREFIX_HEADER = YES;
+				PREFIX_HEADER = GCPrefix.h;
+				PRODUCT_NAME = GhettoChat;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = "-Wmost -Wno-four-char-constants -Wno-unknown-pragmas";
+				WRAPPER_EXTENSION = app;
+			};
+			dependencies = (
+			);
+			isa = PBXApplicationTarget;
+			name = GhettoChat;
+			productInstallPath = "$(HOME)/Applications";
+			productName = GhettoChat;
+			productReference = 17587328FF379C6511CA2CBB;
+			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
+<plist version=\"1.0\">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>GhettoChat</string>
+	<key>CFBundleIconFile</key>
+	<string></string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>GhettoChat</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>0.1</string>
+	<key>NSMainNibFile</key>
+	<string>GhettoChat</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+</dict>
+</plist>
+";
+		};
+		29B97327FDCFA39411CA2CEA = {
+			buildActionMask = 2147483647;
+			files = (
+				32CA4F650368D2AA00C91783,
+				DA6753DD04979F7C006388E0,
+				DA67541A0497AABC006388E0,
+				DA6754220497BE12006388E0,
+				DA67543E0497DC1F006388E0,
+				DA6754400497DC1F006388E0,
+				DA6754430497DC1F006388E0,
+			);
+			isa = PBXHeadersBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29B97328FDCFA39411CA2CEA = {
+			buildActionMask = 2147483647;
+			files = (
+				089C165EFE840E0CC02AAC07,
+				DA6753E90497A1A4006388E0,
+				DA675459049809B4006388E0,
+			);
+			isa = PBXResourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29B9732BFDCFA39411CA2CEA = {
+			buildActionMask = 2147483647;
+			files = (
+				DA6753DE04979F7C006388E0,
+				DA6754190497AABC006388E0,
+				DA6754230497BE12006388E0,
+				DA67543F0497DC1F006388E0,
+				DA6754410497DC1F006388E0,
+				DA6754420497DC1F006388E0,
+			);
+			isa = PBXSourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29B9732DFDCFA39411CA2CEA = {
+			buildActionMask = 2147483647;
+			files = (
+				1058C7A3FEA54F0111CA2CBB,
+				DA6754340497DB1B006388E0,
+			);
+			isa = PBXFrameworksBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+//290
+//291
+//292
+//293
+//294
+//320
+//321
+//322
+//323
+//324
+		32CA4F630368D1EE00C91783 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			path = GCPrefix.h;
+			refType = 4;
+		};
+		32CA4F650368D2AA00C91783 = {
+			fileRef = 32CA4F630368D1EE00C91783;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+//320
+//321
+//322
+//323
+//324
+//4A0
+//4A1
+//4A2
+//4A3
+//4A4
+		4A9504CCFFE6A4B311CA0CBA = {
+			buildRules = (
+			);
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				OPTIMIZATION_CFLAGS = "-O0";
+			};
+			isa = PBXBuildStyle;
+			name = Development;
+		};
+		4A9504CDFFE6A4B311CA0CBA = {
+			buildRules = (
+			);
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+			};
+			isa = PBXBuildStyle;
+			name = Deployment;
+		};
+//4A0
+//4A1
+//4A2
+//4A3
+//4A4
+//DA0
+//DA1
+//DA2
+//DA3
+//DA4
+		DA6753DB04979F7C006388E0 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			name = GCApplication.h;
+			path = Source/GCApplication.h;
+			refType = 4;
+		};
+		DA6753DC04979F7C006388E0 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			name = GCApplication.m;
+			path = Source/GCApplication.m;
+			refType = 4;
+		};
+		DA6753DD04979F7C006388E0 = {
+			fileRef = DA6753DB04979F7C006388E0;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		DA6753DE04979F7C006388E0 = {
+			fileRef = DA6753DC04979F7C006388E0;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		DA6753E70497A1A4006388E0 = {
+			children = (
+				DA6753E80497A1A4006388E0,
+			);
+			isa = PBXVariantGroup;
+			name = GhettoChat.nib;
+			path = "";
+			refType = 4;
+		};
+		DA6753E80497A1A4006388E0 = {
+			isa = PBXFileReference;
+			name = English;
+			path = English.lproj/GhettoChat.nib;
+			refType = 4;
+		};
+		DA6753E90497A1A4006388E0 = {
+			fileRef = DA6753E70497A1A4006388E0;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		DA6754160497AAA4006388E0 = {
+			children = (
+				DA6754170497AABC006388E0,
+				DA6754180497AABC006388E0,
+			);
+			isa = PBXGroup;
+			name = NetSocket;
+			refType = 4;
+		};
+		DA6754170497AABC006388E0 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			name = NetSocket.m;
+			path = ../../../Classes/NetSocket.m;
+			refType = 4;
+		};
+		DA6754180497AABC006388E0 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			name = NetSocket.h;
+			path = ../../../Classes/NetSocket.h;
+			refType = 4;
+		};
+		DA6754190497AABC006388E0 = {
+			fileRef = DA6754170497AABC006388E0;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		DA67541A0497AABC006388E0 = {
+			fileRef = DA6754180497AABC006388E0;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		DA6754200497BE12006388E0 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			name = GCChat.h;
+			path = Source/GCChat.h;
+			refType = 4;
+		};
+		DA6754210497BE12006388E0 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			name = GCChat.m;
+			path = Source/GCChat.m;
+			refType = 4;
+		};
+		DA6754220497BE12006388E0 = {
+			fileRef = DA6754200497BE12006388E0;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		DA6754230497BE12006388E0 = {
+			fileRef = DA6754210497BE12006388E0;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		DA6754330497DB1B006388E0 = {
+			isa = PBXFileReference;
+			name = libz.dylib;
+			path = /usr/lib/libz.1.1.3.dylib;
+			refType = 0;
+		};
+		DA6754340497DB1B006388E0 = {
+			fileRef = DA6754330497DB1B006388E0;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		DA6754370497DC10006388E0 = {
+			children = (
+				DA67543B0497DC1F006388E0,
+				DA67543D0497DC1F006388E0,
+				DA67543C0497DC1F006388E0,
+				DA6754380497DC1F006388E0,
+				DA6754390497DC1F006388E0,
+				DA67543A0497DC1F006388E0,
+			);
+			isa = PBXGroup;
+			name = Protocol;
+			refType = 4;
+		};
+		DA6754380497DC1F006388E0 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			name = NetPacket.h;
+			path = "../GhettoChat Shared/NetPacket.h";
+			refType = 4;
+		};
+		DA6754390497DC1F006388E0 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			name = "NSData-Compression.m";
+			path = "../GhettoChat Shared/NSData-Compression.m";
+			refType = 4;
+		};
+		DA67543A0497DC1F006388E0 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			name = "NSData-Compression.h";
+			path = "../GhettoChat Shared/NSData-Compression.h";
+			refType = 4;
+		};
+		DA67543B0497DC1F006388E0 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			name = GCProtocol.m;
+			path = "../GhettoChat Shared/GCProtocol.m";
+			refType = 4;
+		};
+		DA67543C0497DC1F006388E0 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			name = NetPacket.m;
+			path = "../GhettoChat Shared/NetPacket.m";
+			refType = 4;
+		};
+		DA67543D0497DC1F006388E0 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			name = GCProtocol.h;
+			path = "../GhettoChat Shared/GCProtocol.h";
+			refType = 4;
+		};
+		DA67543E0497DC1F006388E0 = {
+			fileRef = DA6754380497DC1F006388E0;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		DA67543F0497DC1F006388E0 = {
+			fileRef = DA6754390497DC1F006388E0;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		DA6754400497DC1F006388E0 = {
+			fileRef = DA67543A0497DC1F006388E0;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		DA6754410497DC1F006388E0 = {
+			fileRef = DA67543B0497DC1F006388E0;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		DA6754420497DC1F006388E0 = {
+			fileRef = DA67543C0497DC1F006388E0;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		DA6754430497DC1F006388E0 = {
+			fileRef = DA67543D0497DC1F006388E0;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		DA675457049809B4006388E0 = {
+			children = (
+				DA675458049809B4006388E0,
+			);
+			isa = PBXVariantGroup;
+			name = Chat.nib;
+			path = "";
+			refType = 4;
+		};
+		DA675458049809B4006388E0 = {
+			isa = PBXFileReference;
+			name = English;
+			path = English.lproj/Chat.nib;
+			refType = 4;
+		};
+		DA675459049809B4006388E0 = {
+			fileRef = DA675457049809B4006388E0;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA;
+}
