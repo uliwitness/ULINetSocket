@@ -31,7 +31,7 @@
 {
 	// Create a new ULINetSocket connected to the host. Since ULINetSocket is asynchronous, the socket is not 
 	// connected to the host until the delegate method is called.
-	mSocket = [[ULINetSocket netsocketConnectedToHost:@"www.apple.com" port:80] retain];
+	mSocket = [[ULINetSocket netsocketConnectedToHost:@"xkcd.com" port:80] retain];
 	
 	// Schedule the ULINetSocket on the current runloop
 	[mSocket scheduleOnCurrentRunLoop];
