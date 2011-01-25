@@ -7,7 +7,7 @@ LICENSE
 
 This code is released under the zlib license:
 
-	Copyright Dustin Mierau.
+	Copyright 2001 Dustin Mierau.
 	
 	This software is provided 'as-is', without any express or implied
 	warranty. In no event will the authors be held liable for any damages
