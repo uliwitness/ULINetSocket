@@ -655,8 +655,8 @@ static void _cfsocketCallback( CFSocketRef inCFSocketRef, CFSocketCallBackType i
 -(NSString*)	remoteHost
 {
 	CFSocketNativeHandle	nativeSocket;
-	struct sockaddr_in	address;
-	int						addressLength = sizeof( address );
+	struct sockaddr_in		address;
+	socklen_t				addressLength = sizeof( address );
 	
 	// Get the native socket
 	nativeSocket = [self nativeSocketHandle];
@@ -674,8 +674,8 @@ static void _cfsocketCallback( CFSocketRef inCFSocketRef, CFSocketCallBackType i
 -(UInt16)	remotePort
 {
 	CFSocketNativeHandle	nativeSocket;
-	struct sockaddr_in	address;
-	int						addressLength = sizeof( address );
+	struct sockaddr_in		address;
+	socklen_t				addressLength = sizeof( address );
 	
 	// Get the native socket
 	nativeSocket = [self nativeSocketHandle];
@@ -693,8 +693,8 @@ static void _cfsocketCallback( CFSocketRef inCFSocketRef, CFSocketCallBackType i
 -(NSString*)	localHost
 {
 	CFSocketNativeHandle	nativeSocket;
-	struct sockaddr_in	address;
-	int						addressLength = sizeof( address );
+	struct sockaddr_in		address;
+	socklen_t				addressLength = sizeof( address );
 	
 	// Get the native socket
 	nativeSocket = [self nativeSocketHandle];
@@ -712,8 +712,8 @@ static void _cfsocketCallback( CFSocketRef inCFSocketRef, CFSocketCallBackType i
 - (UInt16)localPort
 {
 	CFSocketNativeHandle	nativeSocket;
-	struct sockaddr_in	address;
-	int						addressLength = sizeof( address );
+	struct sockaddr_in		address;
+	socklen_t				addressLength = sizeof( address );
 	
 	// Get the native socket
 	nativeSocket = [self nativeSocketHandle];
@@ -907,9 +907,9 @@ static void _cfsocketCallback( CFSocketRef inCFSocketRef, CFSocketCallBackType i
 -(ULINetSocket*)	_socketAcceptConnection
 {
 	CFSocketNativeHandle	nativeSocket;
-	struct sockaddr_in	socketAddress;
-	NetSocket*				netsocket;
-	int						socketAddressSize;
+	struct sockaddr_in		socketAddress;
+	ULINetSocket*			netsocket;
+	socklen_t				socketAddressSize;
 	int						socketDescriptor;
 	
 	// Get the native socket
