@@ -1,10 +1,31 @@
-
-//  NetSocket
-//  NetSocket.m
+//
+//  ULINetSocket.m
 //  Version 0.9
-//  Created by Dustin Mierau
+//
+//  Copyright (c) Dustin Mierau.
+//	With modifications by Uli Kusterer.
+//
+//	This software is provided 'as-is', without any express or implied
+//	warranty. In no event will the authors be held liable for any damages
+//	arising from the use of this software.
+//
+//	Permission is granted to anyone to use this software for any purpose,
+//	including commercial applications, and to alter it and redistribute it
+//	freely, subject to the following restrictions:
+//
+//	   1. The origin of this software must not be misrepresented; you must not
+//	   claim that you wrote the original software. If you use this software
+//	   in a product, an acknowledgment in the product documentation would be
+//	   appreciated but is not required.
+//
+//	   2. Altered source versions must be plainly marked as such, and must not be
+//	   misrepresented as being the original software.
+//
+//	   3. This notice may not be removed or altered from any source
+//	   distribution.
+//
 
-#import "NetSocket.h"
+#import "ULINetSocket.h"
 #import <arpa/inet.h>
 #import <sys/socket.h>
 #import <sys/time.h>
@@ -17,7 +38,7 @@ static void _cfsocketCallback( CFSocketRef inCFSocketRef, CFSocketCallBackType i
 
 #pragma mark -
 
-@interface NetSocket (Private)
+@interface ULINetSocket ( ULIPrivateMethods )
 - (id)initWithNativeSocket:(int)inNativeSocket;
 - (void)unscheduleFromRunLoop;;
 - (void)_cfsocketCreateForNative:(CFSocketNativeHandle)inNativeSocket;
@@ -28,7 +49,7 @@ static void _cfsocketCallback( CFSocketRef inCFSocketRef, CFSocketCallBackType i
 - (void)_cfsocketDataAvailable;
 - (void)_cfsocketWritable;
 - (void)_socketConnectionTimedOut:(NSTimer*)inTimer;
-- (NetSocket*)_socketAcceptConnection;
+- (ULINetSocket*)_socketAcceptConnection;
 - (void)_socketReadData;
 - (void)_socketWriteData;
 - (BOOL)_socketIsWritable;
@@ -39,7 +60,7 @@ static void _cfsocketCallback( CFSocketRef inCFSocketRef, CFSocketCallBackType i
 
 #pragma mark -
 
-@implementation NetSocket
+@implementation ULINetSocket
 
 - (id)init
 {
@@ -107,58 +128,58 @@ static void _cfsocketCallback( CFSocketRef inCFSocketRef, CFSocketCallBackType i
 
 #pragma mark -
 
-+ (NetSocket*)netsocket
++ (ULINetSocket*)netsocket
 {
-	NetSocket*	netsocket;
+	ULINetSocket*	netsocket;
 	BOOL			success = NO;
 	
-	// Allocate new NetSocket
-	netsocket = [[[NetSocket alloc] init] autorelease];
+	// Allocate new ULINetSocket
+	netsocket = [[[ULINetSocket alloc] init] autorelease];
 	
 	// Attempt to open the socket and schedule it on the current runloop
 	if( [netsocket open] )
 		if( [netsocket scheduleOnCurrentRunLoop] )
 			success = YES;
 	
-	// Return the new NetSocket if creation was successful
+	// Return the new ULINetSocket if creation was successful
 	return ( success ? netsocket : nil );
 }
 
-+ (NetSocket*)netsocketListeningOnRandomPort
++ (ULINetSocket*)netsocketListeningOnRandomPort
 {
 	// Return a new netsocket listening on a random open port
 	return [self netsocketListeningOnPort:0];
 }
 
-+ (NetSocket*)netsocketListeningOnPort:(UInt16)inPort
++ (ULINetSocket*)netsocketListeningOnPort:(UInt16)inPort
 {
-	NetSocket*	netsocket;
+	ULINetSocket*	netsocket;
 	BOOL			success = NO;
 	
-	// Create a new NetSocket
+	// Create a new ULINetSocket
 	netsocket = [self netsocket];
 	
-	// Set the NetSocket to listen on the specified port
+	// Set the ULINetSocket to listen on the specified port
 	if( [netsocket listenOnPort:inPort] )
 		success = YES;
 	
-	// Return the new NetSocket if everything went alright
+	// Return the new ULINetSocket if everything went alright
 	return ( success ? netsocket : nil );
 }
 
-+ (NetSocket*)netsocketConnectedToHost:(NSString*)inHostname port:(UInt16)inPort
++ (ULINetSocket*)netsocketConnectedToHost:(NSString*)inHostname port:(UInt16)inPort
 {
-	NetSocket*	netsocket;
+	ULINetSocket*	netsocket;
 	BOOL			success = NO;
 	
-	// Create a new NetSocket
+	// Create a new ULINetSocket
 	netsocket = [self netsocket];
 	
 	// Attempt to connect to the specified host on the specified port
 	if( [netsocket connectToHost:inHostname port:inPort] )
 		success = YES;
 	
-	// Return the new NetSocket if everything went alright
+	// Return the new ULINetSocket if everything went alright
 	return ( success ? netsocket : nil );
 }
 
@@ -631,7 +652,7 @@ static void _cfsocketCallback( CFSocketRef inCFSocketRef, CFSocketCallBackType i
 
 #pragma mark -
 
-- (NSString*)remoteHost
+-(NSString*)	remoteHost
 {
 	CFSocketNativeHandle	nativeSocket;
 	struct sockaddr_in	address;
@@ -647,10 +668,10 @@ static void _cfsocketCallback( CFSocketRef inCFSocketRef, CFSocketCallBackType i
 		return nil;
 	
 	// Return string representation of the remote hostname
-	return [NetSocket stringWithSocketAddress:&address.sin_addr];
+	return [ULINetSocket stringWithSocketAddress:&address.sin_addr];
 }
 
-- (UInt16)remotePort
+-(UInt16)	remotePort
 {
 	CFSocketNativeHandle	nativeSocket;
 	struct sockaddr_in	address;
@@ -669,7 +690,7 @@ static void _cfsocketCallback( CFSocketRef inCFSocketRef, CFSocketCallBackType i
 	return ntohs( address.sin_port );
 }
 
-- (NSString*)localHost
+-(NSString*)	localHost
 {
 	CFSocketNativeHandle	nativeSocket;
 	struct sockaddr_in	address;
@@ -685,7 +706,7 @@ static void _cfsocketCallback( CFSocketRef inCFSocketRef, CFSocketCallBackType i
 		return nil;
 	
 	// Return string representation of the local hostname
-	return [NetSocket stringWithSocketAddress:&address.sin_addr];
+	return [ULINetSocket stringWithSocketAddress:&address.sin_addr];
 }
 
 - (UInt16)localPort
@@ -750,7 +771,7 @@ static void _cfsocketCallback( CFSocketRef inCFSocketRef, CFSocketCallBackType i
 	signal( SIGPIPE, SIG_IGN );
 }
 
-+ (NSString*)stringWithSocketAddress:(struct in_addr*)inAddress
++(NSString*)	stringWithSocketAddress: (struct in_addr*)inAddress
 {
 	return [NSString stringWithCString:inet_ntoa( *inAddress )];
 }
@@ -830,7 +851,7 @@ static void _cfsocketCallback( CFSocketRef inCFSocketRef, CFSocketCallBackType i
 
 - (void)_cfsocketNewConnection
 {
-	NetSocket* netsocket;
+	ULINetSocket* netsocket;
 	
 	// Accept all pending connections
 	while( netsocket = [self _socketAcceptConnection] )
@@ -883,7 +904,7 @@ static void _cfsocketCallback( CFSocketRef inCFSocketRef, CFSocketCallBackType i
 		[mDelegate netsocket:self connectionTimedOut:timeInterval];
 }
 
-- (NetSocket*)_socketAcceptConnection
+-(ULINetSocket*)	_socketAcceptConnection
 {
 	CFSocketNativeHandle	nativeSocket;
 	struct sockaddr_in	socketAddress;
@@ -902,14 +923,14 @@ static void _cfsocketCallback( CFSocketRef inCFSocketRef, CFSocketCallBackType i
 	if( socketDescriptor < 0 )
 		return nil;
 	
-	// Create a new NetSocket object based on the accepted connection
-	netsocket = [[[NetSocket alloc] initWithNativeSocket:socketDescriptor] autorelease];
+	// Create a new ULINetSocket object based on the accepted connection
+	netsocket = [[[ULINetSocket alloc] initWithNativeSocket:socketDescriptor] autorelease];
 	
-	// If creating the NetSocket object failed, let's close the connection and never speak of this to anyone
+	// If creating the ULINetSocket object failed, let's close the connection and never speak of this to anyone
 	if( !netsocket )
 		close( socketDescriptor );
 	
-	// Return NetSocket based on accepted connection
+	// Return ULINetSocket based on accepted connection
 	return netsocket;
 }
 
@@ -1092,16 +1113,16 @@ static void _cfsocketCallback( CFSocketRef inCFSocketRef, CFSocketCallBackType i
 void 
 _cfsocketCallback( CFSocketRef inCFSocketRef, CFSocketCallBackType inType, CFDataRef inAddress, const void* inData, void* inContext )
 {
-	NetSocket*	netsocket;
+	ULINetSocket*	netsocket;
 	
-	netsocket = (NetSocket*)inContext;
+	netsocket = (ULINetSocket*)inContext;
 	if( !netsocket )
 		return;
 	
 	switch( inType )
 	{
 		case kCFSocketConnectCallBack:
-			// Notify NetSocket that we connected successfully
+			// Notify ULINetSocket that we connected successfully
 			[netsocket _cfsocketConnected];
 			break;
 		
@@ -1116,7 +1137,7 @@ _cfsocketCallback( CFSocketRef inCFSocketRef, CFSocketCallBackType inType, CFDat
 			break;
 		
 		case kCFSocketWriteCallBack:
-			// Notify the NetSocket object that its CFSocketRef is writable again
+			// Notify the ULINetSocket object that its CFSocketRef is writable again
 			[netsocket _cfsocketWritable];
 			break;
 		
