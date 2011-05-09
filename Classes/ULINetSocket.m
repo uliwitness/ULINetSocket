@@ -28,6 +28,7 @@
 #import "ULINetSocket.h"
 #import <arpa/inet.h>
 #import <sys/socket.h>
+#import <sys/un.h>
 #import <sys/time.h>
 #import <sys/ioctl.h>
 #import <fcntl.h>
@@ -362,6 +363,49 @@ static void _cfsocketCallback( CFSocketRef inCFSocketRef, CFSocketCallBackType i
 	return YES;
 }
 
+-(BOOL)listenOnSocket: (NSString *)path maxPendingConnections:(int)inMaxPendingConnections
+{
+	CFSocketNativeHandle	nativeSocket;
+	struct sockaddr_un	socketAddress;
+	int						result;
+
+	if (![self _cfsocketCreated]) {
+		int sock = socket( PF_LOCAL, SOCK_STREAM, 0 );
+		[self _cfsocketCreateForNative: sock];
+	}
+
+	// If the CFSocket was never created, is connected to another host or is already listening, we cannot use it
+	if( ![self _cfsocketCreated] || [self isConnected] || [self isListening] )
+		return NO;
+
+	// Get native socket descriptor
+	nativeSocket = [self nativeSocketHandle];
+	if( nativeSocket < 0 )
+		return NO;
+
+	// Setup socket address
+	bzero( &socketAddress, sizeof( socketAddress ) );
+	[path getCString: socketAddress.sun_path maxLength: sizeof( socketAddress.sun_path ) encoding: NSASCIIStringEncoding];
+	socketAddress.sun_family = AF_LOCAL;
+
+	unlink ([path cStringUsingEncoding: NSASCIIStringEncoding ]);
+
+	// Bind socket to the specified port
+	result = bind( nativeSocket, (struct sockaddr*)&socketAddress, sizeof( socketAddress ) );
+	if( result < 0 )
+		return NO;
+
+	// Start the socket listening on the specified port
+	result = listen( nativeSocket, inMaxPendingConnections );
+	if( result < 0 )
+		return NO;
+
+	// Note that we are actually listening now
+	mSocketListening = YES;
+
+	return YES;
+}
+
 #pragma mark -
 
 - (BOOL)connectToHost:(NSString*)inHostname port:(UInt16)inPort
@@ -406,6 +450,40 @@ static void _cfsocketCallback( CFSocketRef inCFSocketRef, CFSocketCallBackType i
 	// Remove any data left in our outgoing buffer
 	[mIncomingBuffer setLength:0];
 	
+	return YES;
+}
+
+-(BOOL)connectToSocket: (NSString *)path
+{
+	struct sockaddr_un	socketAddress;
+	NSData*					socketAddressData;
+	CFSocketError			socketError;
+
+	if (![self _cfsocketCreated]) {
+		int sock = socket( PF_LOCAL, SOCK_STREAM, 0 );
+		[self _cfsocketCreateForNative: sock];
+	}
+
+	// If the CFSocket was never created, is connected to another host or is already listening, we cannot use it
+	if( ![self _cfsocketCreated] || [self isConnected] || [self isListening] )
+		return NO;
+
+	// Setup socket address
+	bzero( &socketAddress, sizeof( socketAddress ) );
+	[path getCString: socketAddress.sun_path maxLength: sizeof( socketAddress.sun_path ) encoding: NSASCIIStringEncoding];
+	socketAddress.sun_family = AF_LOCAL;
+
+	// Enclose socket address in an NSData object
+	socketAddressData = [NSData dataWithBytes:(void*)&socketAddress length:sizeof( socketAddress )];
+
+	// Attempt to connect our CFSocketRef to the specified host
+	socketError = CFSocketConnectToAddress( mCFSocketRef, (CFDataRef)socketAddressData, -1.0 );
+	if( socketError != kCFSocketSuccess )
+		return NO;
+
+	// Remove any data left in our outgoing buffer
+	[mIncomingBuffer setLength:0];
+
 	return YES;
 }
 
