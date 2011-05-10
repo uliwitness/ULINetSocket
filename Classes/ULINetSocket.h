@@ -89,11 +89,11 @@
 	@param inMaxPendingConnections	the maximum number of pending connections that should be allowed before connections start being refused. */
 -(BOOL)		listenOnPort: (UInt16)inPort maxPendingConnections: (int)inMaxPendingConnections;
 
-/*! Starts the socket listening for connections on the specified path. This method will limit pending connections to 5.
+/*! Starts the socket listening for connections on the specified path. This method will limit pending connections to the specified amount.
  @result YES if the socket is successfully put into a listening state, NO otherwise.
  @param	path is the name of the socket.
  @param inMaxPendingConnections	the maximum number of pending connections that should be allowed before connections start being refused. */
--(BOOL)		listenOnSocket: (NSString *)path maxPendingConnections: (int)inMaxPendingConnections;
+-(BOOL)		listenOnLocalSocketPath: (NSString *)path maxPendingConnections: (int)inMaxPendingConnections;
 
 /*! @methodgroup Connecting */
 /*! Attempts to connect the socket to the specified host on the specified port.
@@ -112,7 +112,7 @@
 /*! Attempts to connect the socket on the specified path.
  @result	YES if the socket is successfully put into a connecting state, NO otherwise.
  @param path	the path of the socket. */
--(BOOL)		connectToSocket: (NSString *)path;
+-(BOOL)		connectToLocalSocketPath: (NSString *)path;
 
 /*! @methodgroup Peeking */
 /*! Allows you to look at the data NetSocket has ready for reading without actually advancing the current read position. Returns all of the available data that is ready for reading. */

@@ -363,7 +363,7 @@ static void _cfsocketCallback( CFSocketRef inCFSocketRef, CFSocketCallBackType i
 	return YES;
 }
 
--(BOOL)listenOnSocket: (NSString *)path maxPendingConnections:(int)inMaxPendingConnections
+-(BOOL)listenOnLocalSocketPath: (NSString *)path maxPendingConnections:(int)inMaxPendingConnections
 {
 	CFSocketNativeHandle	nativeSocket;
 	struct sockaddr_un	socketAddress;
@@ -453,7 +453,7 @@ static void _cfsocketCallback( CFSocketRef inCFSocketRef, CFSocketCallBackType i
 	return YES;
 }
 
--(BOOL)connectToSocket: (NSString *)path
+-(BOOL)connectToLocalSocketPath: (NSString *)path
 {
 	struct sockaddr_un	socketAddress;
 	NSData*					socketAddressData;
@@ -932,7 +932,7 @@ static void _cfsocketCallback( CFSocketRef inCFSocketRef, CFSocketCallBackType i
 	ULINetSocket* netsocket;
 	
 	// Accept all pending connections
-	while( netsocket = [self _socketAcceptConnection] )
+	while(( netsocket = [self _socketAcceptConnection] ))
 	{
 		// Notify our delegate that a new connection has been accepted
 		if( [mDelegate respondsToSelector:@selector( netsocket:connectionAccepted: )] )
