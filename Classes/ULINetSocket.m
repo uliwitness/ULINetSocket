@@ -496,9 +496,9 @@ static void _cfsocketCallback( CFSocketRef inCFSocketRef, CFSocketCallBackType i
 
 #pragma mark -
 
-- (unsigned)read:(void*)inBuffer amount:(unsigned)inAmount
+- (NSUInteger)read:(void*)inBuffer amount:(NSUInteger)inAmount
 {
-	unsigned amountToRead;
+	NSUInteger amountToRead;
 	
 	// If there is no data to read, simply return
 	if( [mIncomingBuffer length] == 0 )
@@ -514,9 +514,9 @@ static void _cfsocketCallback( CFSocketRef inCFSocketRef, CFSocketCallBackType i
 	return amountToRead;
 }
 
-- (unsigned)readOntoData:(NSMutableData*)inData
+- (NSUInteger)readOntoData:(NSMutableData*)inData
 {
-	unsigned amountRead;
+	NSUInteger amountRead;
 	
 	// If there is no data to read, simply return
 	if( [mIncomingBuffer length] == 0 )
@@ -534,9 +534,9 @@ static void _cfsocketCallback( CFSocketRef inCFSocketRef, CFSocketCallBackType i
 	return amountRead;
 }
 
-- (unsigned)readOntoData:(NSMutableData*)inData amount:(unsigned)inAmount
+- (NSUInteger)readOntoData:(NSMutableData*)inData amount:(NSUInteger)inAmount
 {
-	unsigned amountToRead;
+	NSUInteger amountToRead;
 	
 	// If there is no data to read, simply return
 	if( [mIncomingBuffer length] == 0 )
@@ -552,11 +552,11 @@ static void _cfsocketCallback( CFSocketRef inCFSocketRef, CFSocketCallBackType i
 	return amountToRead;
 }
 
-- (unsigned)readOntoString:(NSMutableString*)inString encoding:(NSStringEncoding)inEncoding amount:(unsigned)inAmount
+- (NSUInteger)readOntoString:(NSMutableString*)inString encoding:(NSStringEncoding)inEncoding amount:(NSUInteger)inAmount
 {
 	NSData*		readData;
 	NSString*	readString;
-	unsigned		amountToRead;
+	NSUInteger	amountToRead;
 	
 	// If there is no data to read, simply return
 	if( [mIncomingBuffer length] == 0 )
@@ -615,10 +615,10 @@ static void _cfsocketCallback( CFSocketRef inCFSocketRef, CFSocketCallBackType i
 	return readData;
 }
 
-- (NSData*)readData:(unsigned)inAmount
+- (NSData*)readData:(NSUInteger)inAmount
 {
-	NSData*	readData;
-	unsigned	amountToRead;
+	NSData*		readData;
+	NSUInteger	amountToRead;
 	
 	// If there is no data to read, simply return
 	if( [mIncomingBuffer length] == 0 )
@@ -657,11 +657,11 @@ static void _cfsocketCallback( CFSocketRef inCFSocketRef, CFSocketCallBackType i
 	return readString;
 }
 
-- (NSString*)readString:(NSStringEncoding)inEncoding amount:(unsigned)inAmount
+- (NSString*)readString:(NSStringEncoding)inEncoding amount:(NSUInteger)inAmount
 {
 	NSString*	readString;
 	NSData*		readData;
-	unsigned		amountToRead;
+	NSUInteger	amountToRead;
 	
 	// If there is no data to read, simply return
 	if( [mIncomingBuffer length] == 0 )
@@ -697,7 +697,7 @@ static void _cfsocketCallback( CFSocketRef inCFSocketRef, CFSocketCallBackType i
 
 #pragma mark -
 
-- (void)write:(const void*)inBytes length:(unsigned)inLength
+- (void)write:(const void*)inBytes length:(NSUInteger)inLength
 {
 	// Return if there are no bytes to write
 	if( inLength == 0 )
@@ -816,12 +816,12 @@ static void _cfsocketCallback( CFSocketRef inCFSocketRef, CFSocketCallBackType i
 	return mSocketListening;
 }
 
-- (unsigned)incomingBufferLength
+- (NSUInteger)incomingBufferLength
 {
 	return [mIncomingBuffer length];
 }
 
-- (unsigned)outgoingBufferLength
+- (NSUInteger)outgoingBufferLength
 {
 	return [mOutgoingBuffer length];
 }
@@ -942,7 +942,7 @@ static void _cfsocketCallback( CFSocketRef inCFSocketRef, CFSocketCallBackType i
 
 - (void)_cfsocketDataAvailable
 {
-	unsigned oldIncomingBufferLength;
+	NSUInteger oldIncomingBufferLength;
 	
 	// Store the old incoming buffer length
 	oldIncomingBufferLength = [mIncomingBuffer length];
@@ -1015,9 +1015,9 @@ static void _cfsocketCallback( CFSocketRef inCFSocketRef, CFSocketCallBackType i
 - (void)_socketReadData
 {
 	CFSocketNativeHandle	nativeSocket;
-	void*						readBuffer;
+	void*					readBuffer;
 	int						amountAvailable;
-	int						amountRead;
+	ssize_t					amountRead;
 	
 	// Determine how many bytes are available on the socket to read
 	amountAvailable = [self _socketReadableByteCount];
@@ -1061,7 +1061,7 @@ static void _cfsocketCallback( CFSocketRef inCFSocketRef, CFSocketCallBackType i
 - (void)_socketWriteData
 {
 	CFSocketNativeHandle	nativeSocket;
-	int						amountSent;
+	ssize_t					amountSent;
 	
 	// Return if our CFSocketRef has not been created, the outgoing buffer has no data in it or we are simply not connected
 	if( ![self _cfsocketCreated] || [mOutgoingBuffer length] == 0 || ![self isConnected] )

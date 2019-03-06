@@ -123,25 +123,25 @@
 	@result	the amount of data (in bytes) actually placed in the buffer, this will never be greater than the specified amount.
 	@param inBuffer	the memory buffer read data will be placed into.
 	@param inAmount	the desired number of bytes to read. */
--(unsigned)		read: (void*)inBuffer amount: (unsigned)inAmount;
+-(NSUInteger)		read: (void*)inBuffer amount: (NSUInteger)inAmount;
 
 /*! Reads all the available data from the socket. That data that is read is appended to the specified mutable data object. 
 	@result	the amount of data read in bytes.
 	@param inData	the mutable data object to which the read data will be appended. */
--(unsigned)		readOntoData: (NSMutableData*)inData;
+-(NSUInteger)		readOntoData: (NSMutableData*)inData;
 
 /*! Attempts to read the amount of data specified from the socket. The data that is read is appended to the specified mutable data object.
 	@result	the amount of data (in bytes) actually placed onto the mutable data object, this value will never be greater than the specified amount.
 	@param inData	the mutable data object in which the read data will be appended to.
 	@param inAmount	the number of bytes to read. */
--(unsigned)		readOntoData: (NSMutableData*)inData amount: (unsigned)inAmount;
+-(NSUInteger)		readOntoData: (NSMutableData*)inData amount: (NSUInteger)inAmount;
 
 /*! Attempts to read the amount of data specified from the socket. The data that is read is converted to a string using the specified string encoding and then appended to the specified mutable string object.
 	@result the amount of data actually read, this value will never be greater than the specified amount.
 	@param inString		the mutable string object in which the read data will be appended to.
 	@param inEncoding	the string encoding to use when converting the data intoto a string.
 	@param inAmount		the number of bytes to read. */
--(unsigned)		readOntoString: (NSMutableString*)inString encoding: (NSStringEncoding)inEncoding amount: (unsigned)inAmount;
+-(NSUInteger)		readOntoString: (NSMutableString*)inString encoding: (NSStringEncoding)inEncoding amount: (NSUInteger)inAmount;
 
 /*! Reads all of the available data from the socket.
 	@result	the read data in a new data object. */
@@ -150,7 +150,7 @@
 /*! Attempts to read the amount of data specified (in bytes) from the socket.
 	@result	a new data object containing the read data. You can determine how much was actually read from the socket by checking the length of the data object.
 	@param inAmount	the number of bytes to read. */
--(NSData*)		readData: (unsigned)inAmount;
+-(NSData*)		readData: (NSUInteger)inAmount;
 
 /*! Reads all of the available data from the socket. Returns the read data as a new string object using the specified string encoding.
 	@param inEncoding is the string encoding to use when converting the data into a string. */
@@ -160,13 +160,13 @@
 	@result	the read data as a new string object using the specified string encoding. You can determine how much was actually read from the socket by checking the length of the string object.
 	@param inEncoding	the string encoding to use when converting the data into a string.
 	@param inAmount		the number of bytes to read. */
--(NSString*)	readString: (NSStringEncoding)inEncoding amount: (unsigned)inAmount;
+-(NSString*)	readString: (NSStringEncoding)inEncoding amount: (NSUInteger)inAmount;
 
 /*! @methodgroup Writing */
 /*! Attempts to write the specified amount of bytes onto the socket. In most cases this will be instant, but if you are sending a large amount of data, the data will be copied and sent progressively onto the socket.
 	@param inBytes	the memory buffer to write onto the socket.
 	@param inLength	the size of the memory buffer in bytes. */
--(void)			write: (const void*)inBytes length: (unsigned)inLength;
+-(void)			write: (const void*)inBytes length: (NSUInteger)inLength;
 
 /*! Attempts to write the specified data object onto the socket. In most cases this will be instant, but if you are sending a large amount of data, the data will be copied and sent progressively onto the socket.
 	@param inData	the data object to write onto the socket. */
@@ -187,8 +187,8 @@
 -(UInt16)		localPort;
 -(BOOL)			isConnected;
 -(BOOL)			isListening;
--(unsigned)		incomingBufferLength;
--(unsigned)		outgoingBufferLength;
+-(NSUInteger)	incomingBufferLength;
+-(NSUInteger)	outgoingBufferLength;
 
 -(CFSocketNativeHandle)	nativeSocketHandle;
 
@@ -233,7 +233,7 @@
 /*! Called when the socket has more data available of the specified amount.
 	@param inNetSocket	the notifying socket.
 	@param inAmount		the number of bytes of new data available on the socket. */
--(void)	netsocket: (ULINetSocket*)inNetSocket dataAvailable: (unsigned)inAmount;
+-(void)	netsocket: (ULINetSocket*)inNetSocket dataAvailable: (NSUInteger)inAmount;
 
 /*! Called when all of the data has been sent onto the socket.
 	@param inNetSocket	the notifying socket. */
